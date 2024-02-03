@@ -1,0 +1,8 @@
+profile:
+  value: '현재 프로필은 test 입니다. 🥑'
+
+
+logging:
+  level:
+    root: info
+    '[com.sh.app]': debug
