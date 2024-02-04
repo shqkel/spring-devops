@@ -35,8 +35,10 @@ public class HomeController {
      * @SessionAttribute 속성에 대한 getter
      */
     @GetMapping("/msg/get")
-    public ResponseEntity<?> getMsgFromSession(@SessionAttribute("msg") String msg) {
+    public ResponseEntity<?> getMsgFromSession(@SessionAttribute(value = "msg", required = false) String msg) {
         log.debug("msg = {}", msg);
+        if(msg == null)
+            return ResponseEntity.ok("저장된 msg가 없습니다.");
         return ResponseEntity.ok(msg);
     }
 }
