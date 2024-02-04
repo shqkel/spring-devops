@@ -6,3 +6,16 @@ logging:
   level:
     root: info
     '[com.sh.app]': debug
+
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@kh352.iptime.org:1521:orcl
+    username: spring
+    password: spring
+    driver-class-name: oracle.jdbc.OracleDriver
+
+  sql:
+    init:
+      mode: never
+      data-locations: classpath:sql/data.sql
+      schema-locations: classpath:sql/schema.sql
