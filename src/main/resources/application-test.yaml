@@ -9,19 +9,17 @@ logging:
 
 spring:
   datasource:
-    url: jdbc:oracle:thin:@kh352.iptime.org:1521:orcl
-    username: spring
-    password: spring
+    url: ${TEST_DB_URL}
+    username: ${TEST_DB_USERNAME}
+    password: ${TEST_DB_PASSWORD}
     driver-class-name: oracle.jdbc.OracleDriver
-
   sql:
     init:
       mode: never
       data-locations: classpath:sql/data.sql
       schema-locations: classpath:sql/schema.sql
-
   data:
     redis:
-      host: localhost
-      port: 6379
-      password: 1234
+      host: ${TEST_REDIS_HOST}
+      port: ${TEST_REDIS_PORT}
+      password: ${TEST_REDIS_PASSWORD}
