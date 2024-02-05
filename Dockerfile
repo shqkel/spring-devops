@@ -23,4 +23,4 @@ ENV PROD_REDIS_HOST=${PROD_REDIS_HOST}
 ENV PROD_REDIS_PORT=${PROD_REDIS_PORT}
 ENV PROD_REDIS_PASSWORD=${PROD_REDIS_PASSWORD}
 # 컨테이너 실행 시 app.jar 자동 실행 (프로필 설정)
-ENTRYPOINT ["java", "-jar", "/app.jar", "—spring.profiles.active=prod"]
+ENTRYPOINT ["java", "—Dspring.profiles.active=prod", "-jar", "/app.jar"]
